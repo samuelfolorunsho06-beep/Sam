@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="description" content="Folorunsho Samuel Oluwakayode - cross-functional builder across digital products, operations, health-tech, education and business growth." />
+  <title>Folorunsho Samuel - Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#090909;
+      --panel:#11110f;
+      --panel-2:#171713;
+      --text:#f5f2e9;
+      --muted:#aba89f;
+      --line:rgba(255,255,255,.10);
+      --gold:#d7b46a;
+      --gold-2:#f0d79d;
+      --white:#fff;
+      --shadow:0 28px 90px rgba(0,0,0,.42);
+      --radius:28px;
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:"DM Sans",sans-serif;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    button,a{tap-highlight-color:transparent;-webkit-tap-highlight-color:transparent}
+    .wrap{width:min(calc(100% - 36px),var(--max));margin:0 auto}
+    .eyebrow{display:flex;align-items:center;gap:10px;font-size:12px;text-transform:uppercase;letter-spacing:.18em;color:var(--gold-2);font-weight:700}
+    .eyebrow:before{display:none}
+    .nav{position:fixed;z-index:50;left:0;right:0;top:0;background:rgba(9,9,9,.72);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.06)}
+    .navin{height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{font-family:"Manrope",sans-serif;font-weight:800;letter-spacing:-.04em;font-size:18px}
+    .brand span{color:var(--gold)}
+    .navlinks{display:flex;align-items:center;gap:26px;color:#cbc8be;font-size:14px}
+    .navlinks a:hover{color:#fff}
+    .mini-cta{display:inline-flex;align-items:center;gap:8px;padding:11px 16px;border:1px solid rgba(215,180,106,.55);border-radius:999px;color:#f7e6bd;font-weight:700;font-size:13px;background:rgba(215,180,106,.08)}
+
+    .hero{min-height:100svh;padding:112px 0 44px;display:grid;align-items:center;position:relative;isolation:isolate}
+    .hero:before{content:"";position:absolute;inset:0;z-index:-2;background:
+      radial-gradient(circle at 18% 24%,rgba(215,180,106,.12),transparent 33%),
+      radial-gradient(circle at 80% 68%,rgba(255,255,255,.05),transparent 30%)}
+    .hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:56px;align-items:center}
+    h1,h2,h3,p{margin-top:0}
+    h1{font-family:"Manrope",sans-serif;font-size:clamp(52px,7.4vw,105px);line-height:.92;letter-spacing:-.065em;margin:22px 0 28px;font-weight:800;max-width:850px}
+    h1 .soft{color:#a8a49a}
+    h1 .gold{color:var(--gold-2)}
+    .hero-copy{font-size:18px;line-height:1.7;color:#bdb9af;max-width:700px;margin-bottom:30px}
+    .hero-copy strong{color:#f5f2e9}
+    .actions{display:flex;flex-wrap:wrap;gap:12px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 20px;border-radius:999px;font-weight:700;border:1px solid var(--line);transition:.25s ease}
+    .btn:hover{transform:translateY(-2px)}
+    .btn.primary{background:var(--gold);color:#16130d;border-color:var(--gold)}
+    .btn.secondary{background:#111;border-color:#292929;color:#f6f3ec}
+    .wa{width:18px;height:18px;fill:currentColor}
+
+    .hero-art{position:relative;min-height:620px}
+    .portrait-card{height:100%;min-height:620px;border-radius:36px;overflow:hidden;position:relative;border:1px solid rgba(255,255,255,.11);box-shadow:var(--shadow);background:#111}
+    .portrait-card img{width:100%;height:100%;object-fit:cover;filter:saturate(.72) contrast(1.04) brightness(.72)}
+    .portrait-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,8,8,.06) 0%,rgba(8,8,8,.05) 44%,rgba(8,8,8,.92) 100%)}
+    .hero-tag{position:absolute;left:26px;right:26px;bottom:26px;z-index:2;padding:24px;border:1px solid rgba(255,255,255,.14);background:rgba(10,10,10,.66);backdrop-filter:blur(16px);border-radius:22px}
+    .hero-tag b{display:block;font-family:"Manrope",sans-serif;font-size:22px;letter-spacing:-.03em;margin-bottom:7px}
+    .hero-tag span{font-size:13px;color:#bebbb2;line-height:1.6}
+    .float{position:absolute;right:-22px;top:68px;padding:13px 16px;background:#f3efe5;color:#141414;border-radius:16px;font-size:12px;font-weight:700;box-shadow:0 18px 50px rgba(0,0,0,.28)}
+    .float.two{top:auto;bottom:122px;right:auto;left:-28px;background:#151512;color:#efe9db;border:1px solid rgba(215,180,106,.28)}
+
+    .proof{padding:20px 0 76px}
+    .proof-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .proof-item{padding:24px 18px;border-right:1px solid var(--line)}
+    .proof-item:last-child{border-right:0}
+    .proof-item b{display:block;font-family:"Manrope",sans-serif;font-size:18px;margin-bottom:5px}
+    .proof-item span{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}
+
+    section{padding:92px 0}
+    .section-head{display:grid;grid-template-columns:.7fr 1.3fr;gap:38px;align-items:end;margin-bottom:42px}
+    .section-head h2{font-family:"Manrope",sans-serif;font-size:clamp(38px,5vw,70px);line-height:.98;letter-spacing:-.055em;margin:14px 0 0}
+    .section-head p{color:#b7b3aa;line-height:1.75;max-width:600px;margin:0 0 3px auto}
+
+    .projects{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
+    .project{position:relative;border-radius:30px;overflow:hidden;min-height:520px;border:1px solid rgba(255,255,255,.10);background:#121212}
+    .project.small{min-height:350px}
+    .project img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.68) brightness(.62);transition:transform .6s ease}
+    .project:hover img{transform:scale(1.025)}
+    .project:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.03) 20%,rgba(0,0,0,.88) 100%)}
+    .project-copy{position:absolute;z-index:2;left:28px;right:28px;bottom:28px}
+    .project-kicker{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#e9cc8a;font-weight:700;margin-bottom:10px}
+    .project h3{font-family:"Manrope",sans-serif;font-size:34px;letter-spacing:-.045em;margin:0 0 10px}
+    .project p{color:#d0ccc2;line-height:1.65;margin:0;max-width:620px}
+    .stack{display:grid;gap:18px}
+    .project-labels{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}
+    .project-labels span{font-size:11px;padding:7px 9px;border:1px solid rgba(255,255,255,.18);border-radius:999px;background:rgba(0,0,0,.28);color:#ece8df}
+
+    .value{background:#efebe1;color:#171512;position:relative;overflow:hidden}
+    .value:before{content:"FS";position:absolute;right:-2vw;top:-9vw;font-family:"Manrope";font-weight:800;font-size:34vw;line-height:1;color:rgba(0,0,0,.035);letter-spacing:-.09em}
+    .value .eyebrow{color:#7b5b24}
+    .value h2{color:#171512}
+    .value .section-head p{color:#59554d}
+    .value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;position:relative}
+    .value-card{padding:28px;border:1px solid rgba(15,15,15,.12);border-radius:22px;background:rgba(255,255,255,.42);min-height:230px}
+    .num{font-family:"Manrope";font-size:13px;font-weight:800;color:#8b6724;margin-bottom:55px}
+    .value-card h3{font-family:"Manrope";font-size:25px;letter-spacing:-.035em;margin-bottom:10px}
+    .value-card p{color:#625e55;line-height:1.65;font-size:14px}
+
+    .story-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:26px;align-items:start}
+    .story-title{position:sticky;top:108px}
+    .story-title h2{font-family:"Manrope";font-size:clamp(42px,5vw,72px);line-height:.98;letter-spacing:-.06em;margin:14px 0 18px}
+    .story-title p{color:#aba79e;line-height:1.75}
+    .timeline{border-top:1px solid var(--line)}
+    .timeline-item{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:30px 0;border-bottom:1px solid var(--line)}
+    .timeline-item .time{font-size:12px;color:#8d8a83;text-transform:uppercase;letter-spacing:.12em;padding-top:5px}
+    .timeline-item h3{font-family:"Manrope";font-size:24px;letter-spacing:-.035em;margin:0 0 8px}
+    .timeline-item p{color:#aaa69e;line-height:1.7;margin:0}
+
+    .roles{padding-top:54px}
+    .role-grid{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+    .role{padding:15px 18px;border:1px solid var(--line);border-radius:999px;color:#d8d4ca;background:#11110f;font-size:14px}
+
+    .contact{padding:100px 0 70px}
+    .contact-card{position:relative;overflow:hidden;padding:clamp(34px,7vw,84px);border-radius:36px;background:linear-gradient(135deg,#d5b067 0%,#e6c989 55%,#f0dcae 100%);color:#17120a}
+    .contact-card:after{content:"";position:absolute;width:480px;height:480px;border-radius:50%;right:-190px;top:-220px;border:1px solid rgba(0,0,0,.15);box-shadow:0 0 0 45px rgba(0,0,0,.03),0 0 0 90px rgba(0,0,0,.025)}
+    .contact-card h2{font-family:"Manrope";font-size:clamp(48px,7.6vw,94px);line-height:.94;letter-spacing:-.065em;max-width:900px;margin:0 0 24px;position:relative;z-index:2}
+    .contact-card p{max-width:650px;line-height:1.7;color:#4d3e24;position:relative;z-index:2}
+    .contact-card .btn{background:#15130f;color:#f7ecd5;border-color:#15130f;position:relative;z-index:2}
+    .contact-links{display:flex;flex-wrap:wrap;gap:10px 18px;margin:22px 0 6px;position:relative;z-index:2}
+    .contact-links a{color:#17120a;font-weight:800;text-decoration:none;border-bottom:1px solid rgba(23,18,10,.35)}
+    .project-contact{display:inline-block;margin-top:16px;color:#d8b66d;font-weight:800;text-decoration:none;font-size:13px;letter-spacing:.02em}
+    .lane-intro{margin-top:28px;padding:22px 24px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.025)}
+    .lane-intro b{display:block;color:#f4dfad;margin-bottom:8px}
+    .lane-intro p{margin:0;color:var(--muted);line-height:1.65}
+    footer{padding:10px 0 38px;color:#77746d;font-size:12px}
+    .footerin{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:24px}
+
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease}
+    .reveal.on{opacity:1;transform:none}
+
+    @media(max-width:900px){
+      .navlinks{display:none}
+      .hero{padding-top:98px}
+      .hero-grid,.section-head,.story-grid{grid-template-columns:1fr}
+      .hero-art{min-height:520px;margin-top:12px}
+      .portrait-card{min-height:520px}
+      .float{right:10px}.float.two{left:10px}
+      .proof-grid{grid-template-columns:1fr 1fr}
+      .proof-item:nth-child(2){border-right:0}
+      .proof-item:nth-child(-n+2){border-bottom:1px solid var(--line)}
+      .projects{grid-template-columns:1fr}
+      .project{min-height:450px}.project.small{min-height:360px}
+      .value-grid{grid-template-columns:1fr}
+      .value-card{min-height:0}.num{margin-bottom:24px}
+      .story-title{position:static}
+    }
+    @media(max-width:600px){
+      .wrap{width:min(calc(100% - 24px),var(--max))}
+      .navin{height:64px}
+      .mini-cta{padding:10px 13px;font-size:12px}
+      .hero{min-height:auto;padding:104px 0 40px}
+      h1{font-size:clamp(48px,14.8vw,72px);letter-spacing:-.07em}
+      .hero-copy{font-size:16px}
+      .actions .btn{width:100%}
+      .hero-art{min-height:460px}
+      .portrait-card{min-height:460px;border-radius:26px}
+      .hero-tag{left:16px;right:16px;bottom:16px;padding:18px}
+      .float{top:28px;right:8px}.float.two{bottom:116px;left:8px}
+      section{padding:72px 0}
+      .section-head{gap:18px;margin-bottom:30px}
+      .section-head h2{font-size:45px}
+      .proof-item{padding:20px 10px}.proof-item b{font-size:15px}
+      .project,.project.small{min-height:390px;border-radius:24px}
+      .project-copy{left:20px;right:20px;bottom:20px}.project h3{font-size:28px}
+      .timeline-item{grid-template-columns:1fr;gap:8px;padding:24px 0}
+      .contact-card{border-radius:28px}
+      .footerin{display:block}.footerin span{display:block;margin-bottom:8px}
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="wrap navin">
+      <a class="brand" href="#top">Samuel<span>.</span></a>
+      <div class="navlinks">
+        <a href="#work">Work</a><a href="#value">What I bring</a><a href="#story">Story</a><a href="#contact">Contact</a>
+      </div>
+      <a class="mini-cta" href="https://wa.me/2348069970348?text=Hi%20Samuel%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20talk." target="_blank" rel="noopener">Available to talk</a>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="reveal">
+          <div class="eyebrow">Cross-functional builder · Ilorin, Nigeria</div>
+          <h1>I turn <span class="soft">ideas</span> into <span class="gold">systems people can use.</span></h1>
+          <p class="hero-copy">I'm <strong>Folorunsho Samuel Oluwakayode</strong>, a Nutrition & Dietetics graduate with a builder's mind. I work across digital products, operations, health-tech, education, business growth and web experiences, translating real problems into practical systems.</p>
+          <div class="actions">
+            <a class="btn primary" href="#work">See selected work</a>
+            <a class="btn secondary" href="https://wa.me/2348069970348?text=Hi%20Samuel%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20an%20opportunity." target="_blank" rel="noopener">
+              <svg class="wa" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 3.48A11.84 11.84 0 0 0 12.07 0C5.51 0 .17 5.34.17 11.9c0 2.1.55 4.15 1.6 5.96L.07 24l6.29-1.65a11.9 11.9 0 0 0 5.7 1.45h.01c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.22-6.17-3.45-8.42Zm-8.45 18.3h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.73.98 1-3.63-.23-.37a9.83 9.83 0 0 1-1.51-5.27c0-5.45 4.43-9.88 9.88-9.88a9.81 9.81 0 0 1 6.99 2.9 9.8 9.8 0 0 1 2.89 6.99c-.01 5.44-4.44 9.87-9.89 9.87Zm5.42-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.19 1.87.12.57-.08 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.12-.27-.2-.57-.35Z"/></svg>
+              Talk to me
+            </a>
+          </div>
+        </div>
+        <div class="hero-art reveal">
+          <div class="portrait-card">
+            <img src="samuel-potrait.png" alt="Folorunsho Samuel Oluwakayode" loading="eager" />
+            <div class="hero-tag">
+              <b>Not one box. One operating mindset.</b>
+              <span>Understand the problem. Simplify the moving parts. Build what works. Improve it with feedback.</span>
+            </div>
+          </div>
+          <div class="float">Product thinking</div>
+          <div class="float two">Systems · Growth · Execution</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="proof">
+      <div class="wrap proof-grid reveal">
+        <div class="proof-item"><b>B.Sc. 2:1</b><span>Nutrition & Dietetics</span></div>
+        <div class="proof-item"><b>Product Builder</b><span>Web + workflow systems</span></div>
+        <div class="proof-item"><b>Cross-functional</b><span>Operations + growth</span></div>
+        <div class="proof-item"><b>Open to work</b><span>On-site + remote</span></div>
+      </div>
+    </div>
+
+    <section id="work">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><div class="eyebrow">Selected work</div><h2>I like problems with moving parts.</h2></div>
+          <p>My strongest work sits where people, process and technology meet. These projects show how I think: identify friction, design the flow, make the experience clearer, then build toward adoption.</p>
+        </div>
+        <div class="projects">
+          <article class="project reveal">
+            <img src="https://images.unsplash.com/photo-1691935152546-3a9e05f4010b?auto=format&fit=crop&fm=jpg&q=82&w=1800" alt="Hospital technology workspace" loading="lazy" />
+            <div class="project-copy">
+              <div class="project-kicker">Health-tech · Product design</div>
+              <h3>Autoflow EMR</h3>
+              <p>A hospital workflow concept designed around the reality of care delivery: registration, triage, doctors, pharmacy, lab, nursing, imaging and insurance working through one connected patient journey.</p>
+              <div class="project-labels"><span>Workflow design</span><span>Product strategy</span><span>Healthcare</span><span>UX thinking</span></div>
+              <div class="project-contact">Private hospital workspace · access is restricted for confidentiality</div>
+              <a class="project-contact" href="mailto:autoflowemr@gmail.com">autoflowemr@gmail.com</a>
+            </div>
+          </article>
+          <div class="stack">
+            <article class="project small reveal">
+              <img src="https://images.unsplash.com/photo-1781871522095-3bb9439f3bbe?auto=format&fit=crop&fm=jpg&q=82&w=1400" alt="Modern laptop and mobile workspace" loading="lazy" />
+              <div class="project-copy">
+                <div class="project-kicker">Digital identity · Conversion</div>
+                <h3>IdentityX</h3>
+                <p>A premium digital-presence system for professionals and businesses, designed to turn presentation into perceived value and action.</p>
+                <div class="project-labels"><span>Web experience</span><span>Positioning</span><span>Lead conversion</span></div>
+                <a class="project-contact" href="https://samuelfolorunsho06-beep.github.io/IdentityX/" target="_blank" rel="noopener">Experience IdentityX</a>
+              </div>
+            </article>
+            <article class="project small reveal">
+              <img src="https://images.unsplash.com/photo-1778735940467-1335c201966d?auto=format&fit=crop&fm=jpg&q=82&w=1400" alt="Student working with a laptop" loading="lazy" />
+              <div class="project-copy">
+                <div class="project-kicker">Education · Systems</div>
+                <h3>D'GREAT Soft Learning Institute</h3>
+                <p>Structured learning and exam-preparation work spanning content production, CBT-style practice, digital delivery and school outreach.</p>
+                <div class="project-labels"><span>Education</span><span>Content systems</span><span>Outreach</span></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="value" id="value">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><div class="eyebrow">What I bring</div><h2>Useful thinking, not just impressive words.</h2></div>
+          <p>I'm most valuable in environments where someone needs to understand a messy problem quickly, communicate clearly, coordinate moving parts and keep pushing until the idea becomes something people can actually use.</p>
+        </div>
+        <div class="value-grid">
+          <div class="value-card reveal"><div class="num">01</div><h3>Systems thinking</h3><p>I naturally map the full journey, the handoffs, the bottlenecks and the edge cases before deciding what the solution should look like.</p></div>
+          <div class="value-card reveal"><div class="num">02</div><h3>Commercial instinct</h3><p>I think beyond "can it be built?" to "will someone understand it, trust it, use it and pay attention to it?"</p></div>
+          <div class="value-card reveal"><div class="num">03</div><h3>Execution energy</h3><p>I'm comfortable moving from idea to copy, workflow, prototype, outreach plan and iteration instead of waiting for perfect conditions.</p></div>
+          <div class="value-card reveal"><div class="num">04</div><h3>Communication</h3><p>I simplify complex ideas, ask practical questions and turn abstract goals into steps people can follow.</p></div>
+          <div class="value-card reveal"><div class="num">05</div><h3>Customer empathy</h3><p>My default question is not "what feature can we add?" It is "what is this person trying to get done, and what is getting in the way?"</p></div>
+          <div class="value-card reveal"><div class="num">06</div><h3>Range</h3><p>My background crosses health, education, digital products, sales thinking and web experiences. I use that range to connect dots others can miss.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="story">
+      <div class="wrap story-grid">
+        <div class="story-title reveal">
+          <div class="eyebrow">Background</div>
+          <h2>Different fields. One operating mindset.</h2>
+          <p>My background crosses health, technology, operations, growth and education, but the pattern is consistent: understand people, simplify systems, communicate value and execute. That is the thread connecting the work I do.</p>
+          <div class="lane-intro"><b>Where my range becomes useful</b><p>I fit best where a team needs someone who can move between the customer, the process and the solution without losing sight of the outcome.</p></div>
+          <div class="roles">
+            <div class="eyebrow">Where I can contribute</div>
+            <div class="role-grid">
+              <span class="role">Health / Nutrition / Healthcare Operations</span>
+              <span class="role">Health-tech / Product Operations</span>
+              <span class="role">Business Development / Sales / Growth</span>
+              <span class="role">Digital Projects / Online Presence</span>
+              <span class="role">Education / Training / Learning Operations</span>
+              <span class="role">Customer Success / Operations</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline reveal">
+          <div class="timeline-item">
+            <div class="time">Education</div>
+            <div><h3>B.Sc. Nutrition & Dietetics</h3><p>Federal University of Agriculture, Abeokuta (FUNAAB). Second Class Upper Division.</p></div>
+          </div>
+          <div class="timeline-item">
+            <div class="time">National service</div>
+            <div><h3>NYSC: Edo State</h3><p>A chapter that added real-world exposure, adaptability and experience working outside the environment I already knew.</p></div>
+          </div>
+          <div class="timeline-item">
+            <div class="time">Product building</div>
+            <div><h3>Healthcare workflow systems</h3><p>Designed and iterated Autoflow around the practical realities of hospital departments, patient handoffs, role permissions and clinical workflow.</p></div>
+          </div>
+          <div class="timeline-item">
+            <div class="time">Digital / growth</div>
+            <div><h3>Web experiences built to move people</h3><p>IdentityX and related website work combine design, positioning, sales psychology and conversion thinking rather than treating a website as decoration.</p></div>
+          </div>
+          <div class="timeline-item">
+            <div class="time">Education</div>
+            <div><h3>Learning systems and outreach</h3><p>Work around exam-preparation content, CBT practice, digital delivery and school-focused outreach through D'GREAT Soft Learning Institute.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <div class="contact-card reveal">
+          <h2>Interested in working with me?</h2>
+          <p>I'm open to employment, partnerships and project conversations across health, product operations, business development, digital projects and learning operations. If my range fits what your team needs, I'd be glad to talk.</p>
+          <div class="contact-links"><a href="mailto:samuelfolorunsho06@gmail.com">samuelfolorunsho06@gmail.com</a></div>
+          <div class="actions">
+            <a class="btn" href="https://wa.me/2348069970348?text=Hi%20Samuel%2C%20I%20came%20across%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20an%20opportunity." target="_blank" rel="noopener">
+              <svg class="wa" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 3.48A11.84 11.84 0 0 0 12.07 0C5.51 0 .17 5.34.17 11.9c0 2.1.55 4.15 1.6 5.96L.07 24l6.29-1.65a11.9 11.9 0 0 0 5.7 1.45h.01c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.22-6.17-3.45-8.42Zm-8.45 18.3h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.73.98 1-3.63-.23-.37a9.83 9.83 0 0 1-1.51-5.27c0-5.45 4.43-9.88 9.88-9.88a9.81 9.81 0 0 1 6.99 2.9 9.8 9.8 0 0 1 2.89 6.99c-.01 5.44-4.44 9.87-9.89 9.87Zm5.42-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.19 1.87.12.57-.08 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.12-.27-.2-.57-.35Z"/></svg>
+              Start a conversation
+            </a>
+            <a class="btn" href="https://wa.me/2348069970348?text=Hi%20Samuel%2C%20please%20send%20me%20your%20latest%20CV." target="_blank" rel="noopener">Request my CV</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footerin">
+      <span>© 2026 Folorunsho Samuel Oluwakayode</span>
+      <span>Ilorin, Kwara State · Nigeria · samuelfolorunsho06@gmail.com</span>
+    </div>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('on'); io.unobserve(entry.target); } });
+    }, {threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
